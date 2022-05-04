@@ -31,4 +31,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: m3nin0/flask-example-basic::${{ steps.vars.outputs.tag }}
+        tags: m3nin0/flask-example-basic:${{ steps.vars.outputs.tag }}
