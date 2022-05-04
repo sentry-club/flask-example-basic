@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flask-example-basic"
-version = "0.1.0"
+version = "0.2.0"
 description = "Flask application using Sentry (Example)"
 authors = ["Felipe Carlos <efelipecarlos@gmail.com>"]
 license = "MIT"

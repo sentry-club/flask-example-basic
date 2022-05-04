@@ -8,7 +8,7 @@
 setup_release: create_release associate_commits
 
 create_release:
-	sentry-cli --url $(SENTRY_URL) releases -o $(SENTRY_ORG) new -p $(SENTRY_PROJECT) $(PROJECT_VERSION)
+	sentry-cli --url $(SENTRY_DSN) releases -o $(SENTRY_ORG) new -p $(SENTRY_PROJECT) $(PROJECT_VERSION)
 
 associate_commits:
-	sentry-cli --url $(SENTRY_URL) releases -o $(SENTRY_ORG) -p $(SENTRY_PROJECT) set-commits --auto $(PROJECT_VERSION)
+	sentry-cli --url $(SENTRY_DSN) releases -o $(SENTRY_ORG) -p $(SENTRY_PROJECT) set-commits --auto $(PROJECT_VERSION)
