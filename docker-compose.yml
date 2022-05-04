@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2022 Sentry Club.
+#
+# Example Service is free software; you can redistribute it and/or modify it under
+# the terms of the MIT License; see LICENSE file for more details.
+
+version: "3.4"
+services:
+  example-service-0-1-0:
+    image: example:latest
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "5000:5000"
