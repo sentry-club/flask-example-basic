@@ -29,3 +29,9 @@ variable "aws_ec2_tags" {
 
   description = "AWS EC2 Instance tas"
 }
+
+variable "aws_key_name" {
+  type = string
+
+  description = "AWS EC2 Key pair"
+}
