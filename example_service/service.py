@@ -7,7 +7,7 @@
 
 import os
 
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify
 
 import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
@@ -52,6 +52,13 @@ sentry_sdk.init(
 @app.route("/", methods = ["GET"])
 def processor():
     """Processor resource."""
+
+    # args
+    method = request.args.get("method", None)
+
+    if method:
+        raise RuntimeError("The selected method is overloading the server!")
+
     # running the task
     result = do_some_numerical_task()
 
