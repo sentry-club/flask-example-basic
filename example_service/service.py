@@ -6,6 +6,8 @@
 # the terms of the MIT License; see LICENSE file for more details.
 
 import os
+from time import sleep
+from random import randint
 
 from flask import Flask, request, jsonify
 
@@ -55,9 +57,13 @@ def processor():
 
     # args
     method = request.args.get("method", None)
+    compare = request.args.get("compare", None)
 
     if method:
         raise RuntimeError("The selected method is overloading the server!")
+
+    if compare:
+        sleep(randint(20, 25))
 
     # running the task
     result = do_some_numerical_task()
